@@ -29,3 +29,7 @@ const [firstElement, secondElement] = list;
 // const firstElement = list[0];
 // const secondElement = list[1];
 ///////////////////////////////////////////////////////////////////////////////
+
+// JS course 1:
+// https://frontendmasters.com/courses/js-fundamentals-functional-v2/using-functions/
+// https://slides.com/bgando/f2f-final-day-1
