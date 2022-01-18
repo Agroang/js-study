@@ -46,6 +46,9 @@ const [firstElement, secondElement] = list;
 // arguments, the list and the callback function, for that the readability
 // differs, in a sense ._each() is more functional programming while
 // .forEach() is more object oriented programming.
+
+// There is another JS library called Lodash that does something similar to
+// the Underscore.js library(similar functions)
 ///////////////////////////////////////////////////////////////////////////////
 
 // JS course 1:
