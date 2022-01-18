@@ -52,5 +52,5 @@ const [firstElement, secondElement] = list;
 ///////////////////////////////////////////////////////////////////////////////
 
 // JS course 1:
-// https://frontendmasters.com/courses/js-fundamentals-functional-v2/using-functions/
+// https://frontendmasters.com/courses/js-fundamentals-functional-v2/map-vs-map-functions/
 // https://slides.com/bgando/f2f-final-day-1
