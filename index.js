@@ -30,6 +30,18 @@ const [firstElement, secondElement] = list;
 // const secondElement = list[1];
 ///////////////////////////////////////////////////////////////////////////////
 
+// Underscore.js
+// It seems to be a popular JS library and there are a lot of underscore
+// functions around using it's syntax, such as _.each()
+// Syntax:
+// _.each(list, function)
+// Parameters: It accepts two parameters which are specified below:
+// list: It is the list which contains some elements.
+// function: It is the function which is executed by taking each element of
+// the list.
+// Return values: It returns each element of the list.
+///////////////////////////////////////////////////////////////////////////////
+
 // JS course 1:
 // https://frontendmasters.com/courses/js-fundamentals-functional-v2/using-functions/
 // https://slides.com/bgando/f2f-final-day-1
