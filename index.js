@@ -40,6 +40,12 @@ const [firstElement, secondElement] = list;
 // function: It is the function which is executed by taking each element of
 // the list.
 // Return values: It returns each element of the list.
+
+// There is a difference in use compared to .forEach() as for each is called
+// on the list as a method, while ._each() is a function that you pass both
+// arguments, the list and the callback function, for that the readability
+// differs, in a sense ._each() is more functional programming while
+// .forEach() is more object oriented programming.
 ///////////////////////////////////////////////////////////////////////////////
 
 // JS course 1:
