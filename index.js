@@ -110,5 +110,5 @@ console.log(Array.from('foo'));
 
 
 // JS course 1:
-// https://frontendmasters.com/courses/js-fundamentals-functional-v2/array-from/
+// https://frontendmasters.com/courses/js-fundamentals-functional-v2/scope-walkthrough-part-3/
 // https://slides.com/bgando/f2f-final-day-1
