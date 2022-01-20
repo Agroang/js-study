@@ -55,6 +55,15 @@ const [firstElement, secondElement] = list;
 // The main difference betwen map and each is that each doest NOT return
 // anything.
 // .map RETURNS AN ARRAY, everytime.
+// The result will also always be an array of the same length so if you
+// want to filter something based on true/false then you need .filter
+// and not .map
+
+
+// _.filter()
+
+// It takes an array and a callback function and returns an array that ONLY
+// contains the value that return true from the callback
 
 ///////////////////////////////////////////////////////////////////////////////
 
