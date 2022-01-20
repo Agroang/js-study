@@ -80,6 +80,9 @@ const [firstElement, secondElement] = list;
 // array you need to do the following code:
 const arr = Array.prototype.slice.call(arguments);
 
+// In ES6 we also have another and shorter way of doing the same as above:
+const arr2 = Array.from(arguments);
+
 // Default parameter value:
 
 // You can give a default value to a parameter in JS, so if it's not passed it
@@ -91,6 +94,20 @@ const add = function(a, b = 2) {
 };
 
 add(3);
+
+
+// Array.from()
+
+// As previously stated Array.from() can make an array of array like objects
+// but is also applicable to iterables. You can even create arrays with it
+// passing a string for example:
+
+console.log(Array.from('foo'));
+// expected output: Array ["f", "o", "o"]
+
+// You can also pass a callback function so it is quite useful if you want
+// to create and do something that new array right away.
+
 
 // JS course 1:
 // https://frontendmasters.com/courses/js-fundamentals-functional-v2/array-from/
