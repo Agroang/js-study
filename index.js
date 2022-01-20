@@ -76,6 +76,10 @@ const [firstElement, secondElement] = list;
 // Careful when using arrow functions with this as it might return things that
 // are not expected.
 
+// If you want to make an array-like object, like arguments, into an actual
+// array you need to do the following code:
+const arr = Array.prototype.slice.call(arguments);
+
 // Default parameter value:
 
 // You can give a default value to a parameter in JS, so if it's not passed it
@@ -89,5 +93,5 @@ const add = function(a, b = 2) {
 add(3);
 
 // JS course 1:
-// https://frontendmasters.com/courses/js-fundamentals-functional-v2/map-vs-map-functions/
+// https://frontendmasters.com/courses/js-fundamentals-functional-v2/array-from/
 // https://slides.com/bgando/f2f-final-day-1
