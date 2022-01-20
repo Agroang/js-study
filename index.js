@@ -49,6 +49,13 @@ const [firstElement, secondElement] = list;
 
 // There is another JS library called Lodash that does something similar to
 // the Underscore.js library(similar functions)
+
+// _.map()
+
+// The main difference betwen map and each is that each doest NOT return
+// anything.
+// .map RETURNS AN ARRAY, everytime.
+
 ///////////////////////////////////////////////////////////////////////////////
 
 // JS course 1:
