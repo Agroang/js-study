@@ -67,6 +67,27 @@ const [firstElement, secondElement] = list;
 
 ///////////////////////////////////////////////////////////////////////////////
 
+
+// "arguments" Keyword:
+
+// Used before the spread operator existed and it references all the arguments
+// as a pseudo array. The important thing is that is not actually an array but
+// an object, so we we don't have the handy array methods to use with it.
+// Careful when using arrow functions with this as it might return things that
+// are not expected.
+
+// Default parameter value:
+
+// You can give a default value to a parameter in JS, so if it's not passed it
+// will take the default value.
+
+const add = function(a, b = 2) {
+  console.log(arguments); // logs [3]
+  return a + b;
+};
+
+add(3);
+
 // JS course 1:
 // https://frontendmasters.com/courses/js-fundamentals-functional-v2/map-vs-map-functions/
 // https://slides.com/bgando/f2f-final-day-1
