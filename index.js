@@ -136,5 +136,5 @@ ifElse(true, fn1, fn2, 'HI', 'BYE', 'HOLA');
 // (accumulator, value, index | key, collection).
 
 // JS course 1:
-// https://frontendmasters.com/courses/js-fundamentals-functional-v2/scope-walkthrough-part-3/
+// https://frontendmasters.com/courses/js-fundamentals-functional-v2/empty-room-exercise/
 // https://slides.com/bgando/f2f-final-day-2
