@@ -108,7 +108,33 @@ console.log(Array.from('foo'));
 // You can also pass a callback function so it is quite useful if you want
 // to create and do something that new array right away.
 
+// Higher order functions:
+// 1) Takes a function as an input (argument)
+// 2) Returns a function as the output
+
+// Passing arguments with ES6 to higher order functions:
+
+const ifElse = (condition, isTrue, isFalse, ...args) => {
+  console.log(args) // ['HI', 'BYE', 'HOLA']
+  return condition ? isTrue(...args) : isFalse(...args);
+  // isTrue('HI', 'BYE', 'HOLA')
+};
+ifElse(true, fn1, fn2, 'HI', 'BYE', 'HOLA');
+
+// ...args picks everything after the first 3 arguments passed in this case
+
+// _.reduce :
+// _.reduce(collection, [iteratee=_.identity], [accumulator])
+// It is a critical function to functional programming, just like map, filter,
+// and the others previously mentioned.
+
+// reduce reduces collection to a value which is the accumulated result of
+// running each element in collection thru iteratee, where each successive
+// invocation is supplied the return value of the previous. If accumulator is
+// not given, the first element of collection is used as the initial value. The
+// iteratee is invoked with four arguments:
+// (accumulator, value, index | key, collection).
 
 // JS course 1:
 // https://frontendmasters.com/courses/js-fundamentals-functional-v2/scope-walkthrough-part-3/
-// https://slides.com/bgando/f2f-final-day-1
+// https://slides.com/bgando/f2f-final-day-2
