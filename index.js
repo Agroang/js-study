@@ -158,6 +158,15 @@ curried(1, 2)(3); // same here, so it has 2 values and then gets another
 // arguments to return. It allows you to break arguments passed by the number
 // of arguments.
 
+// A little more abour currying in JS from the web:
+// Currying simply means evaluating functions with multiple arguments and
+// decomposing them into a sequence of functions with a single argument.
+
+// In other terms, currying is when a function — instead of taking all arguments
+// at one time — takes the first one and returns a new function, which takes the
+// second one and returns a new function, which takes the third one, etc.until
+// all arguments are completed.
+
 
 // JS course 1:
 // https://frontendmasters.com/courses/js-fundamentals-functional-v2/empty-room-exercise/
