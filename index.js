@@ -135,6 +135,30 @@ ifElse(true, fn1, fn2, 'HI', 'BYE', 'HOLA');
 // iteratee is invoked with four arguments:
 // (accumulator, value, index | key, collection).
 
+// Currying:
+// Creating a function that can later be called multiple times with different
+// arguments. In lodash you have .curry().
+
+_.curry(func, [arity = func.length])
+
+var abc = function (a, b, c) {
+  return [a, b, c];
+};
+
+var curried = _.curry(abc);
+
+curried(1)(2)(3); // it saves each value and once it has 3 values it returns
+// => [1, 2, 3]
+
+curried(1, 2)(3); // same here, so it has 2 values and then gets another
+// => [1, 2, 3]
+
+// what .curry() does is that it allows you to call a function up to three
+// times in this case, saving the values until it has the needed amount of
+// arguments to return. It allows you to break arguments passed by the number
+// of arguments.
+
+
 // JS course 1:
 // https://frontendmasters.com/courses/js-fundamentals-functional-v2/empty-room-exercise/
 // https://slides.com/bgando/f2f-final-day-2
