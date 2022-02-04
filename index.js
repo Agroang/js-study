@@ -167,6 +167,18 @@ curried(1, 2)(3); // same here, so it has 2 values and then gets another
 // second one and returns a new function, which takes the third one, etc.until
 // all arguments are completed.
 
+// Composing:
+// It's when you take two functions and convine them. You could write it by
+// yourself but there is an underscore method _.compose():
+
+// Returns the composition of a list of functions, where each function consumes
+// the return value of the function that follows. In math terms, composing the
+// functions f(), g(), and h() produces f(g(h())).
+
+var greet = function (name) { return "hi: " + name; };
+var exclaim = function (statement) { return statement.toUpperCase() + "!"; };
+var welcome = _.compose(greet, exclaim);
+welcome('moe'); //  'hi: MOE!'
 
 // JS course 1:
 // https://frontendmasters.com/courses/js-fundamentals-functional-v2/empty-room-exercise/
