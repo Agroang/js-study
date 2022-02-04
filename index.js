@@ -197,5 +197,5 @@ const mult = (a, b) => a * b;
 add(2, mult(3, 5))
 
 // JS course 1:
-// https://frontendmasters.com/courses/js-fundamentals-functional-v2/empty-room-exercise/
+// https://frontendmasters.com/courses/js-fundamentals-functional-v2/closure/
 // https://slides.com/bgando/f2f-final-day-2
