@@ -196,6 +196,28 @@ const add = (a, b) => a + b;
 const mult = (a, b) => a * b;
 add(2, mult(3, 5))
 
+// Scope can get quite tricky if we start referencing a function inside a
+// function and changing values in the parent of that function as each
+// reference will have it's own "version" of the function and of the parent
+// that it was referencing, it is not the same (not in memory at least).
+
+const myAlert = () => {
+  const x = "Help! I think I found a clue!";
+  let count = 0;
+  const alerter = () => {
+    alert(`${x} ${++count}`);
+  };
+
+  return alerter;
+};
+
+const funcAlert = myAlert();
+const funcAlert2 = myAlert();
+funcAlert(); // count will be 1
+funcAlert(); // count will be 2
+funcAlert2(); // count will be 1, even if it's referencing the same
+
+
 // JS course 1:
 // https://frontendmasters.com/courses/js-fundamentals-functional-v2/closure/
 // https://slides.com/bgando/f2f-final-day-2
