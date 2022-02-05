@@ -235,6 +235,34 @@ const didGreenDoItWithA = newClue('Green')
 
 didGreenDoItWithA('knife'); // will use the original name and the weapon
 
+// Another very cool example trying to show the same thing, but this one
+// returns an object with 2 functions instead of just 1 funtion, and then
+// you call the functions with dot notation:
+
+function countClues() {
+  var n = 0;
+  return {
+    count: function () { return ++n; },
+    reset: function () { return n = 0; }
+  };
+};
+
+//ES6 equivalent
+
+const countClues = () => {
+  let n = 0;
+
+  return {
+    count: () => n++,
+    reset: () => n = 0
+  };
+};
+
+const counter = countClues
+countClues.count() // this works, same for reset, and you can make other
+// variables holding the return of countClues and will be different each
+// one from the other.
+
 // JS course 1:
 // https://frontendmasters.com/courses/js-fundamentals-functional-v2/closure/
 // https://slides.com/bgando/f2f-final-day-2
