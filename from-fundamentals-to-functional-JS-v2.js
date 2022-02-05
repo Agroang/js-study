@@ -1,6 +1,8 @@
 // JavaScript: From Fundamentals to Functional JS, v2
 // https://slides.com/bgando/f2f-final-day-1
 // https://slides.com/bgando/f2f-final-day-2
+// https://frontendmasters.com/courses/js-fundamentals-functional-v2/
+
 
 ////////////// ES6 Destructuring: (objects, so Arrays & Objects)///////////////
 
@@ -295,6 +297,4 @@ test; // * Optional: Check what that variable holds as its value(it should be
 // the inner function)
 test(); // run the inner function (should return the scope = local scope)
 
-// JS course 1:
-// https://frontendmasters.com/courses/js-fundamentals-functional-v2/closure/
-// https://slides.com/bgando/f2f-final-day-2
+// Finished //
