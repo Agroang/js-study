@@ -263,6 +263,38 @@ countClues.count() // this works, same for reset, and you can make other
 // variables holding the return of countClues and will be different each
 // one from the other.
 
+// A closure happens when you put two functions inside of a function and you
+// can take advantage of that by returning a function that retains access to
+// it's parent function even after it has been executed.
+
+// Closure recipe (what closure should have):
+
+function checkScope() { // 1: Create parent function
+  var innerVar = "local scope"; // 2: Define var in local scope
+  function innerFunc() { // 3: Define child function
+    return innerVar; // * You want to manipulate/access the function in the
+    // inner scope
+  };
+  return innerFunc; // 4: Return that func from inside the parent
+}
+
+// Execution (or how to make use of closure):
+
+var scope = "global scope"
+function checkScope() {
+  var scope = "local scope";
+  function innerFunc() {
+    return scope;
+  };
+  return innerFunc;
+}
+
+var test = checkScope(); // 1: Run parent function and save it into a variable.
+// This variable will hold whatever that function RETURNS.
+test; // * Optional: Check what that variable holds as its value(it should be
+// the inner function)
+test(); // run the inner function (should return the scope = local scope)
+
 // JS course 1:
 // https://frontendmasters.com/courses/js-fundamentals-functional-v2/closure/
 // https://slides.com/bgando/f2f-final-day-2
