@@ -217,6 +217,23 @@ funcAlert(); // count will be 1
 funcAlert(); // count will be 2
 funcAlert2(); // count will be 1, even if it's referencing the same
 
+// Another interesting example of how functions retain information from their
+// parent scope:
+
+const newClue = (name) => {
+  const length = name.length;
+
+  return (weapon) => {
+    let clue = length + weapon.length;
+    return !!(clue % 2); //playig to check if 0, if zero is false, then true?
+    // 0 = false, !0 = true, !!0 = false, making the value a boolean
+  };
+
+};
+
+const didGreenDoItWithA = newClue('Green')
+
+didGreenDoItWithA('knife'); // will use the original name and the weapon
 
 // JS course 1:
 // https://frontendmasters.com/courses/js-fundamentals-functional-v2/closure/
