@@ -11,3 +11,9 @@
 
 // There is an "Execution Context" created to run the code of a function
 // and it has two parts: the thread of execution and the memory
+
+// When the function finished running, all is deleted but what has been
+// returned.
+
+// https://frontendmasters.com/courses/javascript-hard-parts-v2/generalized-functions/
+// https://static.frontendmasters.com/resources/2019-09-18-javascript-hard-parts-v2/javascript-hard-parts-v2.pdf
