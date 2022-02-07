@@ -94,6 +94,12 @@ const result = copyArrayAndManipulate([1, 2, 3], input => input * 2);
 // beforehand, most used practice nowadays so need to be careful and understand
 // what is actually doing here.
 
+// Anonymous and arrow functions:
+// Improve immediate legibility of the code (less code). Not readibility
+// But at least for most purposes here they are ‘syntactic sugar’
+// Understanding how they’re working under - the - hood is vital to avoid
+// confusion.
 
-// https://frontendmasters.com/courses/javascript-hard-parts-v2/generalized-functions/
+
+// https://frontendmasters.com/courses/javascript-hard-parts-v2/nested-function-scope/
 // https://static.frontendmasters.com/resources/2019-09-18-javascript-hard-parts-v2/javascript-hard-parts-v2.pdf
