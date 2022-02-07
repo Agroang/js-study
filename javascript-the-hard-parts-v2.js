@@ -15,5 +15,36 @@
 // When the function finished running, all is deleted but what has been
 // returned.
 
+// High Order Functions: (accept functions as parameters, very re usable)
+
+// We may not want to decide exactly what some of our functionality is until we
+// run our function
+
+// (Regular function:)
+
+function copyArrayAndMultiplyBy2(array) {
+  const output = [];
+  for (let i = 0; i < array.length; i++) {
+    output.push(array[i] * 2);
+  }
+  return output;
+}
+const myArray = [1, 2, 3];
+const result = copyArrayAndMultiplyBy2(myArray);
+
+// (High order function version of it:)
+
+function copyArrayAndManipulate(array, instructions) { // accepts a function
+  const output = [];
+  for (let i = 0; i < array.length; i++) {
+    output.push(instructions(array[i])); // refers to to the function
+  }
+  return output;
+}
+function multiplyBy2(input) { return input * 2; }
+const result = copyArrayAndManipulate([1, 2, 3], multiplyBy2);
+
+
+
 // https://frontendmasters.com/courses/javascript-hard-parts-v2/generalized-functions/
 // https://static.frontendmasters.com/resources/2019-09-18-javascript-hard-parts-v2/javascript-hard-parts-v2.pdf
