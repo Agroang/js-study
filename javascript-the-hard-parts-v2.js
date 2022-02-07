@@ -34,16 +34,65 @@ const result = copyArrayAndMultiplyBy2(myArray);
 
 // (High order function version of it:)
 
-function copyArrayAndManipulate(array, instructions) { // accepts a function
+function copyArrayAndManipulate(array, instructions) { // copyArrayAndManipulate
+  // is a High Order Function
   const output = [];
   for (let i = 0; i < array.length; i++) {
     output.push(instructions(array[i])); // refers to to the function
   }
   return output;
 }
-function multiplyBy2(input) { return input * 2; }
+function multiplyBy2(input) { return input * 2; } // Callback function passed to
+// copyArrayAndManipulate function
 const result = copyArrayAndManipulate([1, 2, 3], multiplyBy2);
 
+// How is this possible?
+// Functions in javascript = first class objects
+// They can co - exist with and can be treated like any other javascript object
+// 1. Assigned to variables and properties of other objects
+// 2. Passed as arguments into functions
+// 3. Returned as values from functions
+
+// So, as a recap, a High Order Function is takes in a function or passes out a
+// function. The name is just a term to describe these functions - any function
+// that does it we call that - but there's nothing different about them inherently
+
+// This is the logic the funtions such as map, filter and reduce use, you pretty
+// much set the rules with the callback function. This is the most readable way
+// to write code to work with data (you also avoid modifying the original data
+// as you return a new value that is not the original's modified version)
+
+// Callbacks are a core aspect of async JavaScript, and are under - the - hood
+// of promises, async / await
+
+// Arrow Functions:
+// Arrow functions can be very legible (less code) and look great, but they lose
+// readiblity in the process. There are some fundamental differences when it
+// comes to the use of the "this" keyword.
+
+function multiplyBy2(input) { return input * 2; } // traditional way
+const multiplyBy2 = (input) => { return input * 2 } // long arrow function
+const multiplyBy2 = (input) => input * 2 // implicit return and curly braces
+// Works when you are doing something very simple with the function
+const multiplyBy2 = input => input * 2 // implicit round braces/return/curly
+
+// For most purposes, the above are all exactly the same.
+
+// The standard nowadays is to go further, and not even declare the callback
+// function in global, but simple create inside the parameter
+
+function copyArrayAndManipulate(array, instructions) { // still expects function
+  const output = [];
+  for (let i = 0; i < array.length; i++) {
+    output.push(instructions(array[i]));
+  }
+  return output;
+}
+
+const result = copyArrayAndManipulate([1, 2, 3], input => input * 2);
+// We pass the call back like that, not saved into a constant or declaring it
+// beforehand, most used practice nowadays so need to be careful and understand
+// what is actually doing here.
 
 
 // https://frontendmasters.com/courses/javascript-hard-parts-v2/generalized-functions/
