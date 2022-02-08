@@ -100,6 +100,17 @@ const result = copyArrayAndManipulate([1, 2, 3], input => input * 2);
 // Understanding how they’re working under - the - hood is vital to avoid
 // confusion.
 
+// Closure is one of the most elegant and interesting features of JS, it uses
+// a "backpack" that holds hidden data [[scope]] when you return the function
+// that keeps the data around that function available, even after the execution
+// context has finished and delete, making having the ability to hold information
+// overtime. This is incredibly powerful as you could, for example, make a
+// function only a certain number of times based on a condition, like, when you
+// run the function increases a value that is on that backpack, and if it's
+// over a certain a amount, then put a different condition, something like a
+// different return.
+
+
 
 // https://frontendmasters.com/courses/javascript-hard-parts-v2/nested-function-scope/
 // https://static.frontendmasters.com/resources/2019-09-18-javascript-hard-parts-v2/javascript-hard-parts-v2.pdf
