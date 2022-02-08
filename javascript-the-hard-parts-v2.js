@@ -110,6 +110,12 @@ const result = copyArrayAndManipulate([1, 2, 3], input => input * 2);
 // over a certain a amount, then put a different condition, something like a
 // different return.
 
+// JS is quite intelligent in that sense and if, for example, we have other
+// variables in the same scope of the function that we return, and that
+// function does not use some of those variables, those variables won't go
+// into the backpack, only the things that are referenced go into the backpack.
+// *Otherwise it would cause a memory leak, use of memory space that is never
+// used/doesn't have access to.
 
 
 // https://frontendmasters.com/courses/javascript-hard-parts-v2/nested-function-scope/
