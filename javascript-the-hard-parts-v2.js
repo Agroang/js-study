@@ -117,6 +117,85 @@ const result = copyArrayAndManipulate([1, 2, 3], input => input * 2);
 // *Otherwise it would cause a memory leak, use of memory space that is never
 // used/doesn't have access to.
 
+// COVE = Closed Over Variable Environtment (Variable Environt is the local
+// context). This is term to refer to the "backpack".
 
-// https://frontendmasters.com/courses/javascript-hard-parts-v2/nested-function-scope/
+// JS is a static/lexically scoped language. That is to say that where I save
+// my function determines for the rest of the life of that function,
+// whenever it gets run under whatever new label it gets, what data it will
+// have access to when that function runs.
+// The opposite of this would be to access the data where I run it, that would
+// be called dynamic scoping. It changes depending on where I run the function.
+
+// Another fancy name for the "backpack" is:
+// PLSRD : Presistent Lexically(or Static) Scoped Reference Data
+
+// But the most used term, is "closure". You would hear "put the data in the
+// functions closure".
+
+// (A little bit more about Closure:)
+// When a function is defined, it gets a bond to the surrounding Local Memory
+// (“Variable Environment”) in which it has been defined.
+
+function outer() {
+  let counter = 0;
+  function incrementCounter() { counter++; }
+  return incrementCounter;
+}
+const myNewFunction = outer();
+myNewFunction();
+myNewFunction();
+
+// The ‘backpack’
+
+// We return incrementCounter’s code(function definition) out of outer into
+// global and give it a new name - myNewFunction
+// We maintain the bond to outer’s live local memory - it gets ‘returned out’
+// attached on the back of incrementCounter’s function definition.
+// So outer’s local memory is now stored attached to myNewFunction - even
+// though outer’s execution context is long gone
+// When we run myNewFunction in global, it will first look in its own local
+// memory first(as we’d expect), but then in myNewFunction’s ‘backpack’
+
+// What can we call this ‘backpack’?
+// Closed over ‘Variable Environment’ (C.O.V.E.)
+// Persistent Lexical Scope Referenced Data(P.L.S.R.D.)
+// ‘Backpack’
+// ‘Closure’
+
+// The ‘backpack’ (or ‘closure’) of live data is attached incrementCounter(then
+// to myNewFunction) through a hidden property known as [[scope]] which persists
+// when the inner function is returned out
+
+// Individual backpacks
+
+// If we run 'outer' again and store the returned 'incrementCounter' function
+// definition in 'anotherFunction', this new incrementCounter function was
+// created in a new execution context and therefore has a brand new independent
+// backpack
+
+// Closure gives our functions persistent memories and entirely new toolkit for
+// writing professional code
+
+// Helper functions: Everyday professional helper functions like ‘once’ and
+// ‘memoize’
+
+// *Memoization is an optimization technique that speeds up applications by
+// storing the results of expensive function calls and returning the cached
+// result when the same inputs are supplied again.*
+// Usually used as something like:
+memo = memo || {} // if it has value, keep it, otherwise it's an empty object
+
+// Iterators and generators: Which use lexical scoping and closure to achieve
+// the most contemporary patterns for handling data in JavaScript
+
+// Module pattern: Preserve state for the life of an application without polluting
+// the global namespace
+
+// Asynchronous JavaScript: Callbacks and Promises rely on closure to persist state
+// in an asynchronous environment
+
+// Asynchronous JS:
+
+// https://frontendmasters.com/courses/javascript-hard-parts-v2/single-threaded-execution-review/
 // https://static.frontendmasters.com/resources/2019-09-18-javascript-hard-parts-v2/javascript-hard-parts-v2.pdf
