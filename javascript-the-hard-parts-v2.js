@@ -197,5 +197,26 @@ memo = memo || {} // if it has value, keep it, otherwise it's an empty object
 
 // Asynchronous JS:
 
+// JS is a synchronous language, it follows the thread of execution line by line,
+// if it has to invoke a function it will put it on the call stack and the thread
+// will go inside that function until that function evaluates into something.
+// This is the nature of JS.
+
+// Because of how JS works, alone it cannot make asynchronous tasks, yet it can,
+// with the help of others like the browser. The browser does a lot of things
+// and has a lot of tools that help JS be a better version of itself. Because
+// of this we have a lot of JS labels that use the features of the web browser.
+// For example the timer feature of the web browser is used as SetTimeOut() in JS,
+// or the network requests that the web browser can use are fetch() in JS. These
+// are things that do nothing to JS but that we can use because if that intertwined
+// relationship between JS and the web browser.
+
+// When you pass a JS function to the web browser and you set it with a timer,
+// it will  wait in a queue until ALL regular JS is run, even if timing speaking,
+// should run before, that is a run of JS, that is why we need more to be able
+// to do asynchronous JS.
+// So regular JS comes before, all synchronous code, all regular execution comes
+// before the ones that the web browser had set up in qeue
+
 // https://frontendmasters.com/courses/javascript-hard-parts-v2/single-threaded-execution-review/
 // https://static.frontendmasters.com/resources/2019-09-18-javascript-hard-parts-v2/javascript-hard-parts-v2.pdf
