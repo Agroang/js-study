@@ -212,11 +212,21 @@ memo = memo || {} // if it has value, keep it, otherwise it's an empty object
 // relationship between JS and the web browser.
 
 // When you pass a JS function to the web browser and you set it with a timer,
-// it will  wait in a queue until ALL regular JS is run, even if timing speaking,
-// should run before, that is a run of JS, that is why we need more to be able
-// to do asynchronous JS.
+// it will  wait in a callback queue until ALL regular JS is run, even if timing
+// speaking, should run before, that is a run of JS, that is why we need more to
+// be able to do asynchronous JS.
 // So regular JS comes before, all synchronous code, all regular execution comes
 // before the ones that the web browser had set up in qeue
 
-// https://frontendmasters.com/courses/javascript-hard-parts-v2/single-threaded-execution-review/
+// The feature that checks the current call stack and that puts functions from
+// the queue into the call stack WHEN regular JS has finished running is called:
+// "Event Loop"
+
+// The above was pretty much how you would handle asynchronous JS it of course
+// it lead to a bunch of problems, such as the call back function be the only
+// execution context to know about some data, but at the same time it was
+// quite clear the order of things to happen: synchronous js, then queued
+// call backs.
+
+// https://frontendmasters.com/courses/javascript-hard-parts-v2/promises-introduction/
 // https://static.frontendmasters.com/resources/2019-09-18-javascript-hard-parts-v2/javascript-hard-parts-v2.pdf
