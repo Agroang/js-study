@@ -228,5 +228,33 @@ memo = memo || {} // if it has value, keep it, otherwise it's an empty object
 // quite clear the order of things to happen: synchronous js, then queued
 // call backs.
 
+// Recap of the above:
+// JavaScript is not enough - We need new pieces (some of which aren’t
+// JavaScript at all)
+
+// Our core JavaScript engine has 3 main parts:
+// - Thread of execution
+// - Memory / variable environment
+// - Call stack
+
+// We need to add some new components:
+// - Web Browser APIs / Node background APIs
+// - Promises
+// - Event loop, Callback / Task queue and micro task queue
+
+// ES5 Web Browser APIs with callback functions
+// Problems:
+//  - Our response data is only available in the callback function - Callback
+//    hell
+//  - Maybe it feels a little odd to think of passing a function into another
+// function only for it to run much later
+// Benefits:
+//   - Super explicit once you understand how it works under - the - hood
+
+// ES6+ Solution (Promises):
+// Using two-pronged ‘facade’ functions that both:
+// - Initiate background web browser work and
+// - Return a placeholder object(promise) immediately in JavaScript
+
 // https://frontendmasters.com/courses/javascript-hard-parts-v2/promises-introduction/
 // https://static.frontendmasters.com/resources/2019-09-18-javascript-hard-parts-v2/javascript-hard-parts-v2.pdf
