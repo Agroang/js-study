@@ -333,7 +333,7 @@ futureData.catch(errorHandling) // you need to define that function
 // or you can also pass the error handler as a second argument for .then()
 futureData.then(display, errorHandling)
 
-// https://frontendmasters.com/courses/javascript-hard-parts-v2/web-apis-promises-example-fetch/
+// https://frontendmasters.com/courses/javascript-hard-parts-v2/class-oop-introduction/
 // https://static.frontendmasters.com/resources/2019-09-18-javascript-hard-parts-v2/javascript-hard-parts-v2.pdf
 
 // page 66
