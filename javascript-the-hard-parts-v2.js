@@ -299,11 +299,41 @@ console.log("Me first!");
 // - Call stack is empty & all global code run(Have the Event Loop check this
 // condition)
 
-// Prioritize functions in the microtask queue over the Callback queue
+// Prioritize functions in the microtask queue over the Callback queue.
+// *This is important, regular "facade" functions like setTimeOut will go into
+// the regular callback queue whereas the functions that result from a promise
+// will go into the microtask queue, and those are given priority so they will
+// run BEFORE the ones on the regular callback queue. So the priority order
+// is: call stack > microtask queue > callback queue
 
 // (asynchronous means doing code out of order, it runs the code get the promise
 // is fullfilled and has the data back from theat API call)
 
+// Promises, Web APIs, the Callback & Microtask Queuesand Event loop enable:
+
+// Non-blocking applications: This means we don’t have to wait in the single
+// thread and don’t block further code from running.
+// However long it takes: We cannot predict when our Browser feature’s work will
+// finish so we let JS handle automatically running the function on its
+// completion.
+// Web applications: Asynchronous JavaScript is the backbone of the modern web -
+// letting us build fast ‘non-blocking’ applications.
+
+// There are two ways to handle errors (that are bound to happen as we are
+// dealing with the network), and it's another of the amazing feature of the
+// promise object. Just like we have that array onFullfill, we also have another
+// hidden array called onRejection, and just like onFullfill you pass functions
+// that will be run if there is an error. The way to pass functions to that is
+// using the .catch method and pass the functions that you want to run as
+// argument.
+
+const futureData = fetch('https://twitter.com/will/tweets/1')
+futureData.then(display)
+futureData.catch(errorHandling) // you need to define that function
+// or you can also pass the error handler as a second argument for .then()
+futureData.then(display, errorHandling)
 
 // https://frontendmasters.com/courses/javascript-hard-parts-v2/web-apis-promises-example-fetch/
 // https://static.frontendmasters.com/resources/2019-09-18-javascript-hard-parts-v2/javascript-hard-parts-v2.pdf
+
+// page 66
