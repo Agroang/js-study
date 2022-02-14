@@ -256,5 +256,54 @@ memo = memo || {} // if it has value, keep it, otherwise it's an empty object
 // - Initiate background web browser work and
 // - Return a placeholder object(promise) immediately in JavaScript
 
-// https://frontendmasters.com/courses/javascript-hard-parts-v2/promises-introduction/
+function display(data) {
+  console.log(data)
+}
+const futureData = fetch('https://twitter.com/will/tweets/1')
+futureData.then(display);
+
+console.log("Me first!");
+
+// What are "promises"?
+
+// Special objects built into JavaScript that get returned immediately when we
+// make a call to a web browser API / feature(e.g.fetch) that’s set up to return
+// promises (not all are).
+// Promises act as a placeholder for the data we expect to get back from the web
+// browser feature’s background work.
+
+// "then" method and functionality to call on completion:
+
+// Any code we want to run on the returned data must also be saved on the
+// promise object.
+// Added using .then method to the hidden property ‘onFulfilment’
+// Promise objects will automatically trigger the attached function to run (with
+// its input being the returned data.
+
+// Promises:
+
+// Problems
+// - 99 % of developers have no idea how they’re working under the hood
+// - Debugging becomes super- hard as a result
+// - Developers fail technical interviews
+// Benefits
+// - Cleaner readable style with pseudo - synchronous style code
+// - Nice error handling process
+
+// We have rules for the execution of our asynchronously delayed code:
+
+// Hold promise-deferred functions in a microtask queue and callback function in
+// a task queue(Callback queue) when the Web Browser Feature(API) finishes
+
+// Add the function to the Call stack(i.e.run the function) when:
+// - Call stack is empty & all global code run(Have the Event Loop check this
+// condition)
+
+// Prioritize functions in the microtask queue over the Callback queue
+
+// (asynchronous means doing code out of order, it runs the code get the promise
+// is fullfilled and has the data back from theat API call)
+
+
+// https://frontendmasters.com/courses/javascript-hard-parts-v2/web-apis-promises-example-fetch/
 // https://static.frontendmasters.com/resources/2019-09-18-javascript-hard-parts-v2/javascript-hard-parts-v2.pdf
