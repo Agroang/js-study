@@ -333,7 +333,18 @@ futureData.catch(errorHandling) // you need to define that function
 // or you can also pass the error handler as a second argument for .then()
 futureData.then(display, errorHandling)
 
-// https://frontendmasters.com/courses/javascript-hard-parts-v2/class-oop-introduction/
+// Classes & Prototypes, Object Oriented JavaScript:
+
+// The Object-oriented paradigm aims is to let us achieve these three goals:
+// 1) Easy to reason about
+// 2) Easy to add features (new functionality)
+// 3) Nevertheless efficient and performant
+
+Object.create(null); // always returns an empty object, it might have some
+// extra properties if you pass something to it, but it will always be an
+// empty object on creation
+
+// https://frontendmasters.com/courses/javascript-hard-parts-v2/factory-functions-example/
 // https://static.frontendmasters.com/resources/2019-09-18-javascript-hard-parts-v2/javascript-hard-parts-v2.pdf
 
-// page 66
+// page 74
