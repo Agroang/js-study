@@ -344,7 +344,59 @@ Object.create(null); // always returns an empty object, it might have some
 // extra properties if you pass something to it, but it will always be an
 // empty object on creation
 
-// https://frontendmasters.com/courses/javascript-hard-parts-v2/factory-functions-example/
+// If we don't want to repeat our code, there are a few solutions, some better
+// than others of course, one option is:
+
+// Generate objects using a function:
+
+function userCreator(name, score) {
+  const newUser = {};
+  newUser.name = name;
+  newUser.score = score;
+  newUser.increment = function () {
+    newUser.score++;
+  };
+  return newUser;
+};
+
+const user1 = userCreator("Will", 3);
+const user2 = userCreator("Tim", 5);
+user1.increment() // Both will have .increment() method
+
+// Problems with the above way: Each time we create a new user we make space in
+// our computer's memory for all our data and functions. But our functions are
+// just copies.
+
+// Benefits: It's simple and easy to reason about!
+
+// Another option, would be using the prototype chain:
+
+// Store the increment function in just one object and have the interpreter, if
+// it doesn't find the function on user1, look up to that object to check if
+// it's there.
+
+// Link user1 and functionStore so the interpreter, on not finding .increment,
+// makes sure to check up in functionStore where it would find it.
+
+// Make the link with Object.create() technique.
+
+function userCreator(name, score) {
+  const newUser = Object.create(userFunctionStore);
+  newUser.name = name;
+  newUser.score = score;
+  return newUser;
+};
+
+const userFunctionStore = {
+  increment: function () { this.score++; },
+  login: function () { console.log("Logged in"); }
+};
+
+const user1 = userCreator("Will", 3);
+const user2 = userCreator("Tim", 5);
+user1.increment();
+
+// https://frontendmasters.com/courses/javascript-hard-parts-v2/prototype-chain-example-prototypal-link/
 // https://static.frontendmasters.com/resources/2019-09-18-javascript-hard-parts-v2/javascript-hard-parts-v2.pdf
 
-// page 74
+// page 78
